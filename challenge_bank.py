@@ -7,7 +7,7 @@ menu = """
 
 ==> """
 
-saldo = 1500
+saldo = 1300
 saque_dia = 0
 limite_operacao = 500
 limite_diario = 1500
@@ -25,14 +25,10 @@ while True:
         
         if((valor) > 0):
             saldo += valor
-            extrato += (f"R$ {valor:.2f}\n" )
+            extrato += (f"R$ +{valor:.2f}\n" )
         else:
             print("")
             print("Valor Inserido Invalido!")
-
-        print("")
-        print("Extrato: \n" + extrato)
-        print(f"Seu Saldo É De: R${saldo:.2f}")
         
     elif(opcao == "2"):
         print("Saque")
@@ -76,15 +72,9 @@ while True:
             #print("Valor Sacado Dia: "+str(saque_dia))
             #print("Valor Máximo Por Saque: R$ 500.00")
 
-        print("")
-        print("Extrato: \n" + extrato)
-        print(f"Seu Saldo É De: R${saldo:.2f}")
-
     elif(opcao == "3"):
         print("--------------------Extrato--------------------")
-        print(extrato)
         print("*Sem Operações No Dia!*" if not extrato else extrato)
-        print("")
         print(f"Seu Saldo É De: R${saldo:.2f}")
         print(" ----------------------------------------------")
          
@@ -94,5 +84,11 @@ while True:
 
     else:
         print("Seleção Inválida, Por Favor Tente Novamente")
+
+    print("")
+    print("--------------------Extrato--------------------")
+    print("*Sem Operações No Dia!*" if not extrato else extrato)
+    print(f"Seu Saldo É De: R${saldo:.2f}")
+    print(" ----------------------------------------------")
         
 
